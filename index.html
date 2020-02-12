@@ -12,7 +12,12 @@
 
   <!-- Bootstrap -->
 
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/united/bootstrap.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
   <link href="css/extras.css" rel="stylesheet">
   
 </head>
@@ -21,7 +26,7 @@
 
 <body>
 
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -36,15 +41,15 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#research">Research</a></li>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
 
 
 
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Expository <span class="caret"></span></a>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Expository <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#online">Online/Live</a></li>
               <li><a href="#lectures">Presentations</a></li>
@@ -56,10 +61,10 @@
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li> <a href="cv.pdf"> Curriculum Vitae </a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
-            <ul class="dropdown-menu">
+          <li class="nav-item"> <a class="nav-link" href="cv.pdf"> Curriculum Vitae </a></li>
+          <li class="dropdown nav-item">
+            <a  href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+            <ul class="dropdown-menu nav-item">
               <!-- <li><a href="https://homotopytypetheory.org/">Homotopy Type theory</a></li>
               <li><a href="https://leanprover.github.io/tutorial/">Lean online tutorial</a></li> -->
 
@@ -246,8 +251,6 @@ and <a href="http://math.iisc.ac.in/%7Egadgil/Quiz2.ppsx">another quiz</a> condu
 </div>
 <br>
 &nbsp;
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src='js/bootstrap.min.js'></script>
 
 </body>
 </html>
