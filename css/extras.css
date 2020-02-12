@@ -1,9 +1,9 @@
 /* body {
-    padding-top: 60px;
+    padding-top: 80px;
 } */
 
 .section {
-    padding-top: 40px;
+    padding-top: 80px;
 }
 
 #arxiv {
@@ -11,13 +11,11 @@
     border-width: 1px;
 }
 
-a {
+/* a {
     color: #3498db;
-  }
-  
-  a:hover,
-  a:focus {
+}
+
+a:hover, a:focus {
     color: #3498db;
     text-decoration: underline;
-  }
-  
+} */
