@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e
+rsync -avz --exclude MathJax --exclude presentations . math.iisc.ac.in:/home/gadgil/public_html/
