@@ -2,20 +2,20 @@
     padding-top: 80px;
 } */
 
-/* .section {
-    padding-top: 80px;
-} */
+.section {
+    padding-top: 20px;
+}
 
 #arxiv {
     border-style: solid;
     border-width: 1px;
 }
 
-/* a {
-    color: #3498db;
+.nav-item a {
+    color: white;
 }
 
-a:hover, a:focus {
-    color: #3498db;
+.nav-item a:hover, a:focus {
+    color: white;
     text-decoration: underline;
-} */
+}
