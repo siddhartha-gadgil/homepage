@@ -125,3 +125,87 @@ Verjovsky.pdf
 WhiteboardNotes2010.pdf
 WhiteboardNotes.pdf
 slides/
+.sass-cache/
+.travis.yml
+AlgebraicTopology/
+BasicAnalysis/
+Cohomology of Manifolds and Groups Lecture 1/
+ConditionalConvergence/
+DeptForms/
+HoTT-Course/
+Introduction to Algebraic Topology/
+IsarMathLib/
+LTS2019/
+Lecture 1 A quick course in  Homology/
+Lecture 2 Cohomology of Manifolds and Groups/
+Lecture 3 Cohomology of Manifolds and Groups/
+Lecture 4 Cohomology of Manifolds and Groups/
+Lecture 5 Cohomology of Manifolds and Groups/
+MA261/
+PfsProgs25doc/
+Sullivanfest_files/
+Top08/
+TowerOfHanoi/bootstrap.min.css.map
+TowerOfHanoi/out.js.map
+UM102/
+_deploy/
+_posts/
+_site/
+alg09/
+algebraic-topology-2020/
+algebraic-topology-2022/
+algebraic-topology-2024/
+assets/
+bin/
+blog/
+catg2020/
+code/
+condconv/
+data/
+deptweb/
+descs/
+dist/
+doc/
+drive-upload.mp4
+dyn/
+examples/
+expos/
+fonts/
+gogle-drive-upload-2.mp4
+gogle-drive-upload-easy.mp4
+images/
+inhouse_files/
+intro-algebraic-topology-2023/
+intro-algebraic-topology-2024/
+introduction-algebraic-topology-2019/
+introduction-algebraic-topology-2020/
+javascripts/
+jsPDF-0.9.0rc2/
+jvmcore.jar
+lectmp/
+lectures.zip
+lib/
+lts-public/
+mathlets/
+misc/
+node_modules/
+papers/
+plugin/
+plugins/
+proofs-and-programs-2023/
+proofs-and-programs-2025/
+proving-ground/
+public/
+reveal.js/
+sass/
+serb/
+source/
+src/
+stylesheets/
+test/
+topology-2021/
+topology-2022/
+topology-2025/
+tower-of-hanoi/
+unit_conjecture/
+whiteboard/
