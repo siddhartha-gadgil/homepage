@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequence Convergence Visualizer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .chart-container { width: 90vw; height: 60vh; margin: 20px auto; }
+        input { margin: 5px; }
+        #epsilon-display { font-size: 1.2em; font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Sequence Convergence Visualizer</h2>
+    <label>Sequence (in terms of n):</label>
+    <input type="text" id="sequence" value="1/n">
+    <label>Limit (l):</label>
+    <input type="number" id="limit" value="0">
+    <label>Initial Epsilon (ε):</label>
+    <input type="number" id="epsilon" step="0.01" value="0.1">
+    <label>Epsilon Decay Factor:</label>
+    <input type="number" id="decayFactor" step="0.1" value="0.5">
+    <label>N Function (in terms of ε):</label>
+    <input type="text" id="nFunction" value="1/ε">
+    <button onclick="plotSequence()">Plot</button>
+    <button onclick="animateEpsilon()">Animate</button>
+    <div id="epsilon-display">ε = 0.1</div>
+    <div class="chart-container">
+        <canvas id="sequenceChart"></canvas>
+    </div>
+    
+    <script>
+        let animationInterval;
+        let fixedYAxisMin, fixedYAxisMax;
+        
+        function computeN(epsilon, nFuncExpr) {
+            try {
+                let nFunction = new Function("ε", "return " + nFuncExpr);
+                return Math.ceil(nFunction(epsilon));
+            } catch (e) {
+                alert("Invalid N function expression!");
+                return 100;
+            }
+        }
+
+        function plotSequence(epsilon, isAnimating = false) {
+            let seqExpr = document.getElementById("sequence").value;
+            let l = parseFloat(document.getElementById("limit").value);
+            let nFuncExpr = document.getElementById("nFunction").value;
+            
+            epsilon = epsilon !== undefined ? epsilon : parseFloat(document.getElementById("epsilon").value);
+            let N = computeN(epsilon, nFuncExpr);
+            document.getElementById("epsilon-display").innerText = `ε = ${epsilon.toFixed(5)}`;
+            
+            let nValues = [];
+            let seqValues = [];
+            
+            for (let n = 1; n <= 2 * N; n++) {
+                try {
+                    let sequenceFunction = new Function("n", "return " + seqExpr);
+                    let value = sequenceFunction(n);
+                    seqValues.push(value);
+                } catch (e) {
+                    alert("Invalid sequence expression!");
+                    return;
+                }
+                nValues.push(n);
+            }
+            
+            if (!isAnimating) {
+                fixedYAxisMin = l - epsilon;
+                fixedYAxisMax = l + epsilon;
+            }
+            
+            let ctx = document.getElementById("sequenceChart").getContext("2d");
+            if (window.myChart) {
+                window.myChart.destroy();
+            }
+            
+            window.myChart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [
+                        {
+                            label: 'Sequence Values',
+                            data: nValues.map((n, i) => ({ x: n, y: seqValues[i] })),
+                            borderColor: 'blue',
+                            backgroundColor: 'blue',
+                            pointRadius: 3,
+                            showLine: false
+                        },
+                        {
+                            label: 'Upper Bound (l+ε)',
+                            data: [{ x: 1, y: l + epsilon }, { x: 2 * N, y: l + epsilon }],
+                            borderColor: 'red',
+                            borderWidth: 2,
+                            fill: false,
+                            type: 'line'
+                        },
+                        {
+                            label: 'Lower Bound (l-ε)',
+                            data: [{ x: 1, y: l - epsilon }, { x: 2 * N, y: l - epsilon }],
+                            borderColor: 'red',
+                            borderWidth: 2,
+                            fill: false,
+                            type: 'line'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'n' },
+                            min: 1,
+                            max: 2 * N
+                        },
+                        y: {
+                            title: { display: true, text: 'a_n' },
+                            min: fixedYAxisMin,
+                            max: fixedYAxisMax
+                        }
+                    }
+                }
+            });
+        }
+
+        function animateEpsilon() {
+            let epsilon = parseFloat(document.getElementById("epsilon").value);
+            let decayFactor = parseFloat(document.getElementById("decayFactor").value);
+            
+            if (animationInterval) clearInterval(animationInterval);
+            
+            animationInterval = setInterval(() => {
+                if (epsilon < 0.0001) {
+                    clearInterval(animationInterval);
+                    return;
+                }
+                plotSequence(epsilon, true);
+                epsilon *= decayFactor;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
