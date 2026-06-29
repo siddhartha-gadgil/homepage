@@ -1,0 +1,6 @@
+{
+  "name": "Phase Flow: Linear ODE Illustrator",
+  "description": "Interactive visualizer for 2D linear ordinary differential equations, featuring vector fields, eigenvalue analysis, and animated orbits.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
